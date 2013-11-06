@@ -80,7 +80,7 @@ module.exports = (grunt) ->
           '<%= yeoman.specs %>**/*.coffee'
           '<%= yeoman.specs %>**/*.js'
         ]
-        tasks: ["mocha_browser", 'mocha_phantomjs']
+        tasks: ["mocha_browser"]
 
     coffee:
       dist:
@@ -115,10 +115,10 @@ module.exports = (grunt) ->
 
     connect:
       options:
-        port: 9000
+        port: 8888
 
       # change this to '0.0.0.0' to access the server from outside
-        hostname: "localhost"
+        hostname: "0.0.0.0"
 
       livereload:
         options:
@@ -312,6 +312,10 @@ module.exports = (grunt) ->
           output: "<%= yeoman.tmp %>test/coverage.html"
           reporter: 'html-cov'
           urls: ["http://localhost:<%= connect.options.port %>/test/"]
+      console:
+        options:
+          reporter: 'dot'
+          urls: ["http://localhost:<%= connect.options.port %>/test/"]
 
     coffeeCoverage:
       options:
@@ -360,7 +364,7 @@ module.exports = (grunt) ->
         "recess:dev"
         "connect:livereload"
         "mocha_browser"
-        "open"
+        #"open"
         "watch"
       ]
 
@@ -372,7 +376,7 @@ module.exports = (grunt) ->
     "scriptlinker"
     "handlebars" # use "jst" if you don't use handlebars templates
     "connect:test"
-    "mocha_phantomjs"
+    #"mocha_phantomjs"
     "mocha_browser"
   ]
 
