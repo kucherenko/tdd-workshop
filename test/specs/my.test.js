@@ -20,11 +20,5 @@ define(function (require) {
           true.should.equal(true);
         });
       
-        it("should add price to document", function () {
-            var render = sinonSandbox.stub(Price.prototype, 'render').returns('result'),
-                appendChild = sinonSandbox.stub(window.document.body, 'appendChild');
-            sut.start();
-            appendChild.should.have.been.calledWith('result');
-        });
     });
 });
