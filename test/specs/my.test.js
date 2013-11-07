@@ -1,7 +1,6 @@
 define(function (require) {
 
-    var MyApplication = require('my'),
-        Price = require('helpers/price');
+    var MyApplication = require('my');
 
     describe("My Application", function () {
         var sut;
@@ -15,10 +14,5 @@ define(function (require) {
             sut.start();
             consoleLog.should.have.been.calledWith('hello racingpost');
         });
-
-        it("should test anything", function () {
-          true.should.equal(true);
-        });
-      
     });
 });
