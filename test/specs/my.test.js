@@ -16,6 +16,10 @@ define(function (require) {
             consoleLog.should.have.been.calledWith('hello racingpost');
         });
 
+        it("should test anything", function () {
+          true.should.equal(true);
+        });
+      
         it("should add price to document", function () {
             var render = sinonSandbox.stub(Price.prototype, 'render').returns('result'),
                 appendChild = sinonSandbox.stub(window.document.body, 'appendChild');
